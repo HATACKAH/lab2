@@ -30,10 +30,10 @@ struct Main
             getline(inputFile, line);
             linelength = line.length();
             Node *prevElement = new Node;
-            ; // для проброса связки
-            for (int j = 0; j < line.length(); ++j)
-            {                          // Считываем строчку до конца
-                Node *buff = new Node; // хранилище
+            ;
+            for (int j = 0; j < line.length(); ++j) // Считываем строчку до конца
+            {
+                Node *buff = new Node;
                 buff->number = line[j];
                 if (flag == 0)
                 {
@@ -68,9 +68,8 @@ struct Main
             }
             else
             {
-                int counter = 0; // проверка текущей позиции
+                int counter = 0;    // проверка текущей позиции
                 Node *prevElements; //новый элемент, который должен стоять перед заданным
-
 
                 for (int i = 0; i < totalElements; ++i)
                 {
@@ -87,7 +86,7 @@ struct Main
                         prevElements = prevElements->nextNode;
                         counter++;
                     }
-                    if (counter == pos-1)
+                    if (counter == pos - 1)
                     {
                         for (int j = 0; j < inElement.length(); ++j)
                         {
@@ -101,25 +100,30 @@ struct Main
     }
 };
 
-int main() {
+int main()
+{
     string nameOfFile;
     Main line;
     cout
-            << "hello! this programm can put in you list other element on position or delete this list. You need to write path to you file\n"
-               "on first line, on second if you want to delete list write only YES, if you want to put in list, you need write element and\n"
-               "on third line write number, after you want to put element.\n"
-               "Example if i want to delete:\n"
-               "C:\\Users\\test.txt\n"
-               "YES\n"
-               "Example if i want to insert element:\n"
-               "C:\\Users\\test.txt\n"
-               "1\n"
-               "4\n";
+        << "This program can insert a given number of elements in front of an element with a given number and clear the list.\n"
+           "\n"
+           "To insert an element:\n"
+           "\n"
+           "1) Enter the file name or directory file\n"
+           "\n"
+           "2) Element what you want to insert\n"
+           "\n"
+           "3) Element number before which you want to insert another element\n"
+           "\n"
+           "If you want to delete the list, enter the file name and on the next line write DEL\n "
+           "\n";
     cin >> line.nameOfFile;
     cin >> line.inElement;
-    if (line.inElement == "DEL") line.DeleteAll = 1;
-    else cin >> line.pos;
-    line.readfile(); 
+    if (line.inElement == "DEL")
+        line.DeleteAll = 1;
+    else
+        cin >> line.pos;
+    line.readfile();
     line.printer();
     return 0;
 }
