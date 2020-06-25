@@ -61,10 +61,19 @@ struct Main
         {
             if (DeleteAll == 1)
             {
-                for (int i = 0; i < linelength; ++i)
+                /*for (int i = 0; i < linelength; ++i)
                 {
                     out << ' ';
                 }
+                */
+                Node *p;
+                p = firstNode;
+                while (p != NULL)
+                {
+                    firstNode == nullptr;
+                    break;
+                }
+                cout << "Success!";
             }
             else
             {
