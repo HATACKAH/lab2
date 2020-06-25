@@ -69,23 +69,25 @@ struct Main
             else
             {
                 int counter = 0; // проверка текущей позиции
-                Node *prevElements;
+                Node *prevElements; //новый элемент, который должен стоять перед заданным
+
+
                 for (int i = 0; i < totalElements; ++i)
                 {
                     if (flag == 0)
                     {
                         out << firstNode->number;
-                        prevElements->nextNode=firstNode;
+                        prevElements = firstNode->nextNode;
                         flag = 1;
                         counter++;
                     }
                     else
                     {
                         out << prevElements->number;
-                        firstNode = firstNode->nextNode;
+                        prevElements = prevElements->nextNode;
                         counter++;
                     }
-                    if (counter == pos)
+                    if (counter == pos-1)
                     {
                         for (int j = 0; j < inElement.length(); ++j)
                         {
@@ -99,7 +101,25 @@ struct Main
     }
 };
 
-int Main()
-{
-    //code
+int main() {
+    string nameOfFile;
+    Main line;
+    cout
+            << "hello! this programm can put in you list other element on position or delete this list. You need to write path to you file\n"
+               "on first line, on second if you want to delete list write only YES, if you want to put in list, you need write element and\n"
+               "on third line write number, after you want to put element.\n"
+               "Example if i want to delete:\n"
+               "C:\\Users\\test.txt\n"
+               "YES\n"
+               "Example if i want to insert element:\n"
+               "C:\\Users\\test.txt\n"
+               "1\n"
+               "4\n";
+    cin >> line.nameOfFile;
+    cin >> line.inElement;
+    if (line.inElement == "DEL") line.DeleteAll = 1;
+    else cin >> line.pos;
+    line.readfile(); 
+    line.printer();
+    return 0;
 }
