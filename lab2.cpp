@@ -61,14 +61,10 @@ struct Main
         {
             if (DeleteAll == 1)
             {
-                /*for (int i = 0; i < linelength; ++i)
-                {
-                    out << ' ';
-                }
-                */
+
                 Node *p;
                 p = firstNode;
-                while (p != NULL)
+                while (p != nullptr)
                 {
                     firstNode == nullptr;
                     break;
