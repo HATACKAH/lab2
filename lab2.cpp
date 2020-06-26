@@ -18,7 +18,7 @@ struct Main
     int pos = -1;
     int totalElements = 1;
 
-    int readfile()
+    void readfile()
     {
 
         int flag = 0;
